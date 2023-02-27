@@ -1,0 +1,84 @@
+*{
+    background-color: #00224B;
+    flex-direction: column;
+}
+.body{
+    font-family: cursive;
+    color: violet;
+    display: flex;
+}
+.titre1{
+    display: flex;
+    text-align: center;
+}
+.text{
+    display: flex;
+    text-align: center;
+}
+.mid{
+    display: flex;
+    height: 30%;
+    width: 100%;
+}
+.bouton{
+    display: block;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    color: #00ff00;
+    text-align: center;
+    height: 100%;
+}
+.leboutton {
+    font-family: cursive;
+    display: flex;
+    align-items: center;
+    margin-right: 30%;
+    padding-left: 30%;
+}
+button{
+    margin: 3px;
+    padding: 3px;
+    background-color:#00224B;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    cursor: pointer;
+    font-family: cursive;
+}
+
+.bouton:before, .bouton:after {
+	content: '';
+	position: absolute;
+	left: -2px;
+	top: -2px;
+	background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+		#0000ff, #00ff00,#ffff00, #ff0000);
+	background-size: 400%;
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	z-index: -1;
+	animation: roll 20s linear infinite;
+}
+
+@keyframes roll {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.bouton:after {
+	filter: blur(50px);
+}
+  

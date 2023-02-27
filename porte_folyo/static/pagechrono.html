@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chrono</title>
+</head>
+<body>
+    <div class="chrono">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <div id="output"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var intervalId;
+            $("#start").click(function() {
+                $.get("/").done(function(data) {
+                    $("#output").html(data);
+                    clearInterval(intervalId);
+                });
+                intervalId = setInterval(function() {
+                    $.get("/").done(function(data) {
+                        $("#output").html(data);
+                    });
+                }, 1000);
+            });
+            $("#stop").click(function() {
+                clearInterval(intervalId);
+            });
+        });
+    </script>
+</body>
+</html>
